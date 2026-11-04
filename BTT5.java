@@ -1,22 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class BTT5 {
     private static final Scanner sc = new Scanner(System.in);
-
     // BTT6 - Bai 1: Mang so luong cua 5 cuon sach.
     private static final int[] soLuong = new int[5];
-
     // BTT6 - Bai 2: Danh sach ma sach dung ArrayList<String>.
     private static final ArrayList<String> maSach = new ArrayList<>();
-
     // BTT5, BTT6 - Bai 3, Bai 4: Moi chuoi luu ma, ten, so luong va don gia cua mot sach.
     private static final ArrayList<String> danhSachSach = new ArrayList<>();
-
     public static void main(String[] args) {
         int chon;
         do {
-            // BTT5 - Bai 3, BTT6 - Bai 4: Menu lap den khi chon thoat.
+            //BTT5 - Bai 3, BTT6 - Bai 4: Menu lap den khi chon thoat.
             System.out.println("1. Them sach");
             System.out.println("2. Hien thi sach");
             System.out.println("3. Tim sach");
@@ -27,6 +22,7 @@ public class BTT5 {
             System.out.println("8. Thoat");
             System.out.println("9. BTT6 - Bai 1: Mang so luong 5 cuon sach");
             System.out.println("10. BTT6 - Bai 2: Quan ly ma sach");
+            System.out.println("11. BTT5 - Mo menu bai 1 den bai 4");
             chon = nhapSoNguyen("Chon: ");
             switch (chon) {
                 case 1:
@@ -59,10 +55,43 @@ public class BTT5 {
                 case 10:
                     menuBai2();
                     break;
+                case 11:
+                    menuBTT5();
+                    break;
                 default:
                     System.out.println("Lua chon khong hop le.");
             }
         } while (chon != 8);
+    }
+
+    // BTT5 - Bai 3: Menu lap den khi chon thoat.
+    private static void menuBTT5() {
+        int chon;
+        do {
+            System.out.println("\n===== BTT5 =====");
+            System.out.println("1. Nhap n sach");
+            System.out.println("2. Tinh tong so luong va tong gia tri sach");
+            System.out.println("3. Tim sach theo ma");
+            System.out.println("4. Thoat menu BTT5");
+            chon = nhapSoNguyen("Chon: ");
+            switch (chon) {
+                case 1:
+                    themSach();
+                    break;
+                case 2:
+                    tinhTongSoLuong();
+                    tinhTongGiaTri();
+                    break;
+                case 3:
+                    timTheoMa();
+                    break;
+                case 4:
+                    System.out.println("Da thoat menu BTT5.");
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le.");
+            }
+        } while (chon != 4);
     }
 
     // BTT6 - Bai 1: Nhap va xu ly so luong cua 5 cuon sach.
